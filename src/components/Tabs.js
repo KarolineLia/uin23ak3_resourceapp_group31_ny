@@ -1,34 +1,33 @@
 import React from "react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Tabs = () => {
-    const [activeTab, setActiveTab] = useState("HTML");
-    const handleHTMLTab = () => {
-        // update the state to tab1
-        setActiveTab("HTML");
-      };
-      const handleCSStab = () => {
-        // update the state to tab2
-        setActiveTab("CSS");
-      };
+function Tabs () {
+      const handleClick = event => {
+    
+        const buttonElements = document.querySelectorAll("nav li");
+        buttonElements.forEach((element) => {
+            element.classList.replace("active", "inactive");
+        });
+    
+        event.currentTarget.classList.add('active')
+      }
 
   return (
     <div id="category-tabs">
-        <Link to="/">
-        <button className={activeTab === "HTML" ? "active" : ""} onClick={handleHTMLTab}>HTML</button>
+        <Link to="/html">
+        <li className="inactive" onClick={handleClick}>HTML</li>
         </Link>
-        <Link to="/">
-        <button className={activeTab === "CSS" ? "active" : ""} onClick={handleCSStab}>CSS</button>
+        <Link to="/css">
+        <li className="inactive" onClick={handleClick}>CSS</li>
         </Link>
-        <Link to="/">
-        <button className={activeTab === "JavaScript" ? "active" : ""} cat-index="JavaScript">JavaScript</button>
+        <Link to="/javascript">
+        <li className="inactive" onClick={handleClick}>JavaScript</li>
         </Link>
-        <Link to="/">
-        <button className={activeTab === "React" ? "active" : ""} cat-index="React">React</button>
+        <Link to="/react">
+        <li className="inactive" onClick={handleClick}>React</li>
         </Link>
-        <Link to="/">
-        <button className={activeTab === "Sanity-CMS" ? "active" : ""} cat-index="Sanity-CMS">Sanity og CMS</button>
+        <Link to="/sanity">
+        <li className="inactive" onClick={handleClick}>Sanity og CMS</li>
         </Link>
     </div>
   );

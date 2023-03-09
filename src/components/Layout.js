@@ -1,18 +1,16 @@
 import Tabs from './Tabs'
-import { Link } from "react-router-dom";
-import Categorypage from './Categorypage';
+import React from 'react';
 
 export default function Layout() {
     return (
         <div id="front-page-container">
             <header>
-                <Link to="/">
                 <h1>Ressursarkiv</h1>
-                </Link>
             </header>
             <main>
+                <nav>
                 <Tabs/>
-                <Categorypage/>
+                </nav>
             </main>
         </div>
     )
