@@ -1,35 +1,45 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Tabs () {
-      const handleClick = event => {
-    
-        const buttonElements = document.querySelectorAll("nav li");
-        buttonElements.forEach((element) => {
-            element.classList.replace("active", "inactive");
-        });
-    
-        event.currentTarget.classList.add('active')
-      }
+    const [activeTab, setActiveTab] = useState("HTML");
+    const handleHTMLTab = () => {
+        setActiveTab("HTML");
+      };
+      const handleCSSTab = () => {
+        setActiveTab("CSS");
+      };
+      const handleJavaTab = () => {
+        setActiveTab("JavaScript");
+      };
+      const handleReactTab = () => {
+        setActiveTab("React");
+      };
+      const handleSanityTab = () => {
+        setActiveTab("Sanity-CMS");
+      };
+      {/*Kilder: https://blog.logrocket.com/how-to-build-tab-component-react/ og https://ariakit.org/examples/tab-react-router*/}
 
   return (
     <div id="category-tabs">
         <Link to="/html">
-        <li className="inactive" onClick={handleClick}>HTML</li>
+        <button className={activeTab === "HTML" ? "active" : ""} onClick={handleHTMLTab}>HTML</button>
         </Link>
         <Link to="/css">
-        <li className="inactive" onClick={handleClick}>CSS</li>
+        <button className={activeTab === "CSS" ? "active" : ""} onClick={handleCSSTab}>CSS</button>
         </Link>
         <Link to="/javascript">
-        <li className="inactive" onClick={handleClick}>JavaScript</li>
+        <button className={activeTab === "JavaScript" ? "active" : ""} onClick={handleJavaTab}>JavaScript</button>
         </Link>
         <Link to="/react">
-        <li className="inactive" onClick={handleClick}>React</li>
+        <button className={activeTab === "React" ? "active" : ""} onClick={handleReactTab}>React</button>
         </Link>
         <Link to="/sanity">
-        <li className="inactive" onClick={handleClick}>Sanity og CMS</li>
+        <button className={activeTab === "Sanity-CMS" ? "active" : ""} onClick={handleSanityTab}>Sanity og CMS</button>
         </Link>
     </div>
+    /*Kilder: https://blog.logrocket.com/how-to-build-tab-component-react/ og https://ariakit.org/examples/tab-react-router*/
   );
 };
 export default Tabs;

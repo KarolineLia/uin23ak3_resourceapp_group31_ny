@@ -1,5 +1,6 @@
 import Tabs from './Tabs'
 import React from 'react';
+import Categorypage from './Categorypage';
 
 export default function Layout() {
     return (
@@ -8,9 +9,8 @@ export default function Layout() {
                 <h1>Ressursarkiv</h1>
             </header>
             <main>
-                <nav>
                 <Tabs/>
-                </nav>
+                <Categorypage/>
             </main>
         </div>
     )

@@ -31,7 +31,7 @@ header h1 {
     overflow: hidden;
 }
 
-#category-tabs li {
+#category-tabs button {
     background-color: #F5F5F5;
     border: 1.5px solid #B7B7B7;
     border-bottom: none;
@@ -43,7 +43,7 @@ header h1 {
     color: #707070;
 }
 
-#category-tabs li.active {
+#category-tabs button.active {
     background-color: #25DFE6;
     border: none;
     color: white;
