@@ -19,7 +19,8 @@ function Tabs () {
       const handleSanityTab = () => {
         setActiveTab("Sanity-CMS");
       };
-      {/*Kilder: https://blog.logrocket.com/how-to-build-tab-component-react/ og https://ariakit.org/examples/tab-react-router*/}
+      {/*Kilder: https://blog.logrocket.com/how-to-build-tab-component-react/ og https://ariakit.org/examples/tab-react-router
+        https://react-bootstrap.github.io/components/tabs/*/}
 
   return (
     <div id="category-tabs">
