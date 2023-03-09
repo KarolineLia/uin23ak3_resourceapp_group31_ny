@@ -1,6 +1,7 @@
 import Tabs from './Tabs'
 import React from 'react';
 import Categorypage from './Categorypage';
+import {Outlet} from 'react-router-dom';
 
 export default function Layout() {
     return (
@@ -10,7 +11,7 @@ export default function Layout() {
             </header>
             <main>
                 <Tabs/>
-                <Categorypage/>
+                <Outlet />
             </main>
         </div>
     )
