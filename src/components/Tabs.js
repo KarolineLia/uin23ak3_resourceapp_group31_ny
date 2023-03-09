@@ -1,8 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import CSS from '../NavTabs/CSS'
-import HTML from '../NavTabs/HTML'
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Tabs = () => {
     const [activeTab, setActiveTab] = useState("HTML");
@@ -17,13 +15,6 @@ const Tabs = () => {
 
   return (
     <div id="category-tabs">
-        {/*<ul className="tablinks">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Sanity og CMS</li>
-        </ul>*/}
         <Link to="/">
         <button className={activeTab === "HTML" ? "active" : ""} onClick={handleHTMLTab}>HTML</button>
         </Link>
@@ -39,10 +30,6 @@ const Tabs = () => {
         <Link to="/">
         <button className={activeTab === "Sanity-CMS" ? "active" : ""} cat-index="Sanity-CMS">Sanity og CMS</button>
         </Link>
-
-        <div className="tabcontent">
-            {activeTab === "HTML" ? <HTML /> : <CSS />}
-        </div>
     </div>
   );
 };
