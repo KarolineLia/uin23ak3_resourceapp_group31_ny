@@ -46,7 +46,7 @@ header {
     font-size: 20px;
     color: $grey-body;
 
-    .active{
+    &.active{
     background-color: $blue;
     border: none;
     color: $white;
